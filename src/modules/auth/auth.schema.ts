@@ -7,3 +7,10 @@ export const signUpSchema = z.object({
   image: z.url().optional(),
   callbackUrl: z.url().optional(),
 });
+
+export const signInSchema = z.object({
+  email: z.email(),
+  password: z.string(),
+  rememberMe: z.boolean().optional(),
+  callbackUrl: z.url().optional(),
+});

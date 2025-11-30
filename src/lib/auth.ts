@@ -1,7 +1,6 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "../config/database"; // your drizzle instance
-import * as schema from "../db/schema";
 import { bearer } from "better-auth/plugins";
 
 export const auth = betterAuth({
@@ -14,6 +13,7 @@ export const auth = betterAuth({
   },
   emailAndPassword: {
     enabled: true,
+    autoSignIn: false,
   },
 });
 
